@@ -1,4 +1,4 @@
-mk-hub.sh
+mkhub.sh
 ===========
 
 You may need it on the path.
