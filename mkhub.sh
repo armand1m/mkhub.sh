@@ -6,10 +6,10 @@ echo "project description:"; read REPODESCRIPTION
 echo "add interactive then commit? y/n"; read MUSTADD
 echo "set a remote name: "; read REMOTENAME
 
-GITHUBUSERNAME=${GITHUBUSERNAME// /\ } 
-REPONAME=${REPONAME// /-} 
+GITHUBUSERNAME=${GITHUBUSERNAME// /\ }
+REPONAME=${REPONAME// /-}
 REPODESCRIPTION=${REPODESCRIPTION// /\ }
-REMOTENAME=${REMOTENAME// /-} 
+REMOTENAME=${REMOTENAME// /-}
 REPOURL=https://github.com/$GITHUBUSERNAME/$REPONAME
 
 echo "\ncreating remote repository.."
@@ -20,19 +20,13 @@ echo "\nrepository remote url: $REPOURL"
 git init
 git remote add $REMOTENAME $REPOURL
 
-if [[ "$MUSTADD" = "y" || "$MUSTADD" = "Y" ]] 
+if [[ "$MUSTADD" = "y" || "$MUSTADD" = "Y" ]]
   then
 
   git add -i
-
   echo "\ncommiting content.."
-
   git commit -m "chore(project): pushing from mkhub.sh"
-
 fi
 
 echo "\npushing repository.."
 git push -u origin master
-
-
-
